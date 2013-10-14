@@ -122,7 +122,7 @@
         var myOptions = {
             zoom: initialZoom,
             minZoom: 0,
-            maxZoom: 8,
+            maxZoom: 7,
             center: latlng,
             panControl: true,
             zoomControl: true,
@@ -130,13 +130,15 @@
             scaleControl: false,
             streetViewControl: false,
             overviewMapControl: true,
-            rotateControl = true,
+            rotateControl: true,
             mapTypeControlOptions: { mapTypeIds: ["ImageCutter"] },
 	    mapTypeId: "ImageCutter"
         }
         map = new google.maps.Map(document.getElementById("map"), myOptions);
 	gmicMapType = new GMICMapType();
         map.mapTypes.set("ImageCutter",gmicMapType);
+        map.setTilt(45);
+        map.setheading(90);
 
 /////////////////////////////////////////////////////////////////////////////////////
 //Add any markers here e.g.
